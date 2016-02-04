@@ -30,6 +30,7 @@ module Lita
           sleep config.waittime
           return snapshot['snapshot_url']
         else
+          log "Status code #{return_code.to_s}"
           t('errors.request')
         end
       end
