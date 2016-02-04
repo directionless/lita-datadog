@@ -34,7 +34,7 @@ module Lita
           if snapshot.is_a?(Hash) and snapshot.has_key?('errors')
             error_message = "\n" + snapshot['errors'].join('\n')
           end
-          log("Graph snapshot failed with status code #{return_code.to_s}#{error_message}")
+          log.error("Graph snapshot failed with status code #{return_code.to_s}#{error_message}")
           t('errors.request')
         end
       end
